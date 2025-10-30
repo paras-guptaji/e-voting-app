@@ -45,14 +45,14 @@ Open your browser at http://localhost:3000
 src/
 │
 ├── components/
-│   ├── Form.css        # Styling for forms
-│   ├── Home.js         # Home page after login
-│   ├── Login.js        # Login page component
-│   └── Signup.js       # Signup/registration component
+│   ├── Form.css 
+│   ├── Home.js 
+│   ├── Login.js 
+│   └── Signup.js
 │
-├── App.css             # Global styles
-├── App.js              # Root component
-└── index.js            # React entry point
+├── App.css
+├── App.js     
+└── index.js  
 
 📸 Preview
 
