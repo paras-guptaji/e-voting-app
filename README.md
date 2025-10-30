@@ -20,6 +20,9 @@ Editor	Visual Studio Code
 Version Control	Git & GitHub
 ⚙️ Setup Instructions
 
+Here's the link for prototype:
+https://e-voting-app-ten.vercel.app/
+
 Clone the repository
 
 git clone https://github.com/paras-guptaji/e-voting-app.git
