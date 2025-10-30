@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+🗳️ E-Voting App (Frontend Prototype)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developed as part of a Blockchain Course Project at Jaypee University of Engineering and Technology, Guna
 
-## Available Scripts
+A modern and responsive E-Voting web application prototype built using React.js.
+This project demonstrates the design and flow of a secure online voting platform, including voter registration, login, and voting pages — ready for future integration with a blockchain backend.
 
-In the project directory, you can run:
+🚀 Features
 
-### `npm start`
+✅ Clean, minimal, and responsive interface
+✅ User registration and login simulation
+✅ Simple home page representing voting dashboard
+✅ Modular React component architecture
+✅ Future-ready for backend or blockchain integration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧠 Tech Stack
+Layer	Technologies
+Frontend	React.js, JavaScript, HTML, CSS
+Editor	Visual Studio Code
+Version Control	Git & GitHub
+⚙️ Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clone the repository
 
-### `npm test`
+git clone https://github.com/paras-guptaji/e-voting-app.git
+cd e-voting-app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the development server
 
-### `npm run eject`
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open your browser at http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📁 Project Structure
+src/
+│
+├── components/
+│   ├── Form.css        # Styling for forms
+│   ├── Home.js         # Home page after login
+│   ├── Login.js        # Login page component
+│   └── Signup.js       # Signup/registration component
+│
+├── App.css             # Global styles
+├── App.js              # Root component
+└── index.js            # React entry point
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📸 Preview
 
-## Learn More
+Add screenshots here once your UI is ready:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Login Page]
+<img width="1366" height="768" alt="Screenshot (63)" src="https://github.com/user-attachments/assets/fe7567da-61e6-41f4-b201-b96b5cef8ce6" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Signup Page]
+<img width="1366" height="768" alt="Screenshot (64)" src="https://github.com/user-attachments/assets/f0ef0c77-a5cf-434b-a8bd-5519c69da669" />
 
-### Code Splitting
+[Home Page]
+<img width="1366" height="768" alt="Screenshot (66)" src="https://github.com/user-attachments/assets/a9cdc951-77c5-4896-b0bc-a3311af9bb91" />
+<img width="1366" height="768" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/26e7c1d6-e8ac-449d-8a1d-2af18d62c418" />
+<img width="1366" height="768" alt="Screenshot (68)" src="https://github.com/user-attachments/assets/101f79c4-ecf4-4b32-8bd8-5e1f6922cce4" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🛠️ Future Enhancements
 
-### Making a Progressive Web App
+🔗 Integrate Ethereum smart contracts for on-chain voting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🧑‍💼 Admin panel for election management and results
 
-### Advanced Configuration
+🔐 Secure user authentication (Firebase or Web3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📊 Live vote counting and result visualization
