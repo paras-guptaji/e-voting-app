@@ -23,7 +23,7 @@ Version Control	Git & GitHub
 
 
 Here's the link for prototype:
-https://e-voting-app-ten.vercel.app/
+https://e-voting-app--ten.vercel.app//
 
 
 
