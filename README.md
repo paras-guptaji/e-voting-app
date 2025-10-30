@@ -20,8 +20,12 @@ Editor	Visual Studio Code
 Version Control	Git & GitHub
 ⚙️ Setup Instructions
 
+
+
 Here's the link for prototype:
 https://e-voting-app-ten.vercel.app/
+
+
 
 Clone the repository
 
@@ -42,17 +46,9 @@ npm start
 Open your browser at http://localhost:3000
 
 📁 Project Structure
-src/
-│
-├── components/
-│   ├── Form.css 
-│   ├── Home.js 
-│   ├── Login.js 
-│   └── Signup.js
-│
-├── App.css
-├── App.js     
-└── index.js  
+
+ <img width="232" height="224" alt="image" src="https://github.com/user-attachments/assets/b32f4179-fe88-42cd-9004-6aea3b7c378a" />
+
 
 📸 Preview
 
