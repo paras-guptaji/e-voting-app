@@ -51,6 +51,8 @@ export default class Voting extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
+      console.log("Detected Network ID:", networkId);
+      console.log("Available networks in ABI:", Object.keys(Election.networks));
       const deployedNetwork = Election.networks[networkId];
       const instance = new web3.eth.Contract(
         Election.abi,

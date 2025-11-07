@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Web3 from "web3";
+
 
 // Components
 import Navbar from "./Navbar/Navigation";
@@ -34,49 +36,57 @@ export default class Home extends Component {
 
   // refreshing once
   componentDidMount = async () => {
-    if (!window.location.hash) {
-      window.location = window.location + "#loaded";
-      window.location.reload();
-    }
-    try {
-      // Get network provider and web3 instance.
-      const web3 = await getWeb3();
+  if (!window.location.hash) {
+    window.location = window.location + "#loaded";
+    window.location.reload();
+  }
 
-      // Use web3 to get the user's accounts.
+  try {
+    // ✅ Initialize modern Web3
+    if (window.ethereum) {
+      const web3 = new Web3(window.ethereum);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+
       const accounts = await web3.eth.getAccounts();
-
-      // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = Election.networks[networkId];
-      const instance = new web3.eth.Contract(
-        Election.abi,
-        deployedNetwork && deployedNetwork.address
-      );
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
+      console.log("Detected Network ID:", networkId);
+      console.log("Available networks:", Object.keys(Election.networks));
+
+      const deployedNetwork = Election.networks[networkId];
+
+      // ✅ Check if contract is deployed to this network
+      if (!deployedNetwork) {
+        alert("Smart contract not deployed to detected network. Please check Ganache and redeploy.");
+        console.error("Election.networks:", Election.networks);
+        return;
+      }
+
+      // ✅ Create contract instance
+      const instance = new web3.eth.Contract(Election.abi, deployedNetwork.address);
+
+      // ✅ Save state
       this.setState({
         web3: web3,
         ElectionInstance: instance,
         account: accounts[0],
       });
 
-      const admin = await this.state.ElectionInstance.methods.getAdmin().call();
-      if (this.state.account === admin) {
+      // ✅ Proceed with contract calls only if instance is valid
+      const admin = await instance.methods.getAdmin().call();
+      if (accounts[0] === admin) {
         this.setState({ isAdmin: true });
       }
 
-      // Get election start and end values
-      const start = await this.state.ElectionInstance.methods.getStart().call();
-      this.setState({ elStarted: start });
-      const end = await this.state.ElectionInstance.methods.getEnd().call();
-      this.setState({ elEnded: end });
+      const start = await instance.methods.getStart().call();
+      const end = await instance.methods.getEnd().call();
 
-      // Getting election details from the contract
-      const electionDetails = await this.state.ElectionInstance.methods
-      .getElectionDetails()
-      .call();
-      
+      this.setState({
+        elStarted: start,
+        elEnded: end,
+      });
+
+      const electionDetails = await instance.methods.getElectionDetails().call();
       this.setState({
         elDetails: {
           adminName: electionDetails.adminName,
@@ -86,14 +96,15 @@ export default class Home extends Component {
           organizationTitle: electionDetails.organizationTitle,
         },
       });
-    } catch (error) {
-      // Catch any errors for any of the above operations.
-      alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`
-      );
-      console.error(error);
+    } else {
+      alert("Non-Ethereum browser detected. Please install MetaMask!");
     }
-  };
+  } catch (error) {
+    alert("Failed to load web3, accounts, or contract. Check console for details.");
+    console.error(error);
+  }
+};
+
   // end election
   endElection = async () => {
     await this.state.ElectionInstance.methods

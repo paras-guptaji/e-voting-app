@@ -11,7 +11,7 @@ const Footer = () => (
           View this project on{" "}
           <a
             className="profile"
-            href="https://github.com/arlbibek/dVoting"
+            href="https://github.com/paras-guptaji/e-voting-app.git"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -19,18 +19,7 @@ const Footer = () => (
           </a>
           .
         </p>
-        <p>
-          Made with <i className="fas fa-heartbeat" /> by{" "}
-          <a
-            className="profile"
-            href="https://arlbibek.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Bibek Aryal
-          </a>
-          .
-        </p>
+        
       </div>
     </div>
   </>
